@@ -46,7 +46,7 @@ class OUActionNoise:
 
 
 class DDPG:
- ##### Setting up RL class #####
+##### Setting up RL class #####
     def __init__(self, rl_yaml):
         seed=np.random.randint(0,10e6)
         tf.random.set_seed(seed)
@@ -96,7 +96,7 @@ class DDPG:
         # Number of "experiences" to store at max
         self.buffer_capacity=rl_setup['buffer capacity']
         # Num of tuples to train on.
-        self.batch_size=rl_setup['batch size']
+        self.batch_max_size=rl_setup['batch size']
 
         # Its tells us num of times record() was called.
         self.buffer_counter=0
@@ -112,6 +112,8 @@ class DDPG:
                 self.action_buffer=buffer['action_buffer']
                 self.reward_buffer=buffer['reward_buffer']
                 self.next_state_buffer=buffer['next_state_buffer']
+                self.done_buffer=buffer['done_buffer']
+                self.buffer_counter=buffer['buffer_counter'][0]
             except Exception as e:
                 # If loading fails, print an error message and skip
                 print("Error in loading buffer {0}".format(self.buffer_filename))
@@ -126,7 +128,7 @@ class DDPG:
             self.action_buffer=np.zeros((self.buffer_capacity, self.num_actions))
             self.reward_buffer=np.zeros((self.buffer_capacity, 1))
             self.next_state_buffer=np.zeros((self.buffer_capacity, self.state_size))
-
+            self.done_buffer=np.zeros((self.buffer_capacity, 1))
         ## Noise model
         std_dev=0.1
         self.ou_noise=OUActionNoise(mean=np.zeros(1), std_deviation=float(std_dev)*np.ones(1))
@@ -182,7 +184,7 @@ class DDPG:
         act=sampled_actions.numpy()+noise
         return np.clip(act,-1,1)
 
-    def recordStep(self, prev_state, act, reward, state):
+    def recordStep(self, prev_state, act, reward, state, done=0):
         # Set index to zero if buffer_capacity is exceeded,
         # replacing old records
         index = self.buffer_counter % self.buffer_capacity
@@ -191,44 +193,54 @@ class DDPG:
         self.action_buffer[index]=act
         self.reward_buffer[index]=reward
         self.next_state_buffer[index]=state
+        self.done_buffer[index]=done
 
         self.saveBuffer()
 
         self.buffer_counter+=1
+        self.batch_size=min(self.batch_max_size, int(np.ceil(0.1*self.buffer_counter)))
+        #self.batch_size=
 
     def saveBuffer(self):
-        np.savez(self.buffer_filename, state_buffer=self.state_buffer, action_buffer=self.action_buffer,reward_buffer=self.reward_buffer, next_state_buffer=self.next_state_buffer)
+        np.savez(self.buffer_filename, 
+            state_buffer=self.state_buffer, action_buffer=self.action_buffer,
+            reward_buffer=self.reward_buffer, next_state_buffer=self.next_state_buffer, 
+            done_buffer=self.done_buffer, buffer_counter=np.array([self.buffer_counter]))
 
     def setModelsDir(self, _model_dir_path):
         self.model_dir=_model_dir_path
 
 ##### Learning #####
     def getBatch(self):
-        # Get sampling range
+      ## Get sampling range
         record_range=min(self.buffer_counter, self.buffer_capacity)
-        # Randomly sample indices
+        
+      ## Randomly sample indices
         batch_indices=np.random.choice(record_range, self.batch_size)
-        #print(batch_indices)
-        # Convert to tensors
+
+      ## Convert to tensors
         state_batch=keras.ops.convert_to_tensor(self.state_buffer[batch_indices])
         action_batch=keras.ops.convert_to_tensor(self.action_buffer[batch_indices])
         reward_batch=keras.ops.convert_to_tensor(self.reward_buffer[batch_indices])
         reward_batch=keras.ops.cast(reward_batch, dtype="float32")
         next_state_batch=keras.ops.convert_to_tensor(self.next_state_buffer[batch_indices])
-
-        return state_batch, action_batch, reward_batch, next_state_batch
+        done_batch=keras.ops.convert_to_tensor(np.ones(self.batch_size)-self.done_buffer[batch_indices])
+        done_batch=keras.ops.cast(done_batch, dtype="float32")
+        
+        return state_batch, action_batch, reward_batch, next_state_batch, done_batch
 
     # Eager execution is turned on by default in TensorFlow 2. Decorating with tf.function allows
     # TensorFlow to build a static graph out of the logic and computations in our function.
     # This provides a large speed up for blocks of code that contain many small TensorFlow operations such as this one.
     @tf.function
-    def update(self, state_batch, action_batch, reward_batch, next_state_batch):
+    def update(self, state_batch, action_batch, reward_batch, next_state_batch, done_batch):
         #print("UPDATING")
         # Training and updating Actor & Critic networks.
         # See Pseudo Code.
         with tf.GradientTape() as tape:
             target_actions=self.actor_target(next_state_batch, training=True)
-            y=reward_batch+self.gamma*self.critic_target([next_state_batch, target_actions], training=True)
+            done_batch*self.critic_target([next_state_batch, target_actions], training=True)
+            y=reward_batch+self.gamma*done_batch*self.critic_target([next_state_batch, target_actions], training=True)
             critic_value=self.critic([state_batch, action_batch], training=True)
             critic_loss=keras.ops.mean(keras.ops.square(y-critic_value))
         critic_grad=tape.gradient(critic_loss, self.critic.trainable_variables)
@@ -259,8 +271,8 @@ class DDPG:
     def learn(self):
         #print("LEARNING")
         #weights_init=self.critic.get_weights()
-        state_batch, action_batch, reward_batch, next_state_batch=self.getBatch()
-        actor_loss, critic_loss=self.update(state_batch, action_batch, reward_batch, next_state_batch)
+        state_batch, action_batch, reward_batch, next_state_batch, done_batch=self.getBatch()
+        actor_loss, critic_loss=self.update(state_batch, action_batch, reward_batch, next_state_batch, done_batch)
         #print("\n\n",critic_loss, y, critic_value)
         #weight_diff=0
         #weights_final=self.critic.get_weights()
