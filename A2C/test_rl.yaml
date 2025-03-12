@@ -1,0 +1,33 @@
+model dir: models
+define: &state-size 4
+define: &action-size 9
+
+action size: *action-size
+state size: *state-size
+gamma: 0.01
+entropy: 0.01
+actor:
+  filename: actor_network.keras
+  learning rate: 0.005
+  clipnorm: 1.0
+  weights:
+    combined:
+      input size: *state-size
+      weights:
+        - 7
+        - 7
+  output:
+    activation function: softmax
+    size: *action-size
+critic:
+  filename: critic_network.keras
+  learning rate: 0.005
+  clipnorm: 1.0
+  weights:
+    combined:
+      input size: *state-size
+      weights:
+        - 5
+        - 5
+  output:
+    size: 1
