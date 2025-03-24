@@ -15,7 +15,7 @@ agent=Agent()
 agent.reset()
 
 TT=10e6
-e_length=200
+e_length=150
 
 '''
 for t in np.arange(10):

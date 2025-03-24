@@ -71,27 +71,27 @@ class DDPG:
         self.critic_target_filename=self.model_dir+'/'+critic['target filename']
 
         self.buffer_filename=self.model_dir+'/'+rl_setup['buffer filename']
-        print(self.buffer_filename)
+        # print(self.buffer_filename)
 
-        if os.path.exists(self.actor_filename):
-            print("Loading models")
-            self.actor=keras.models.load_model(self.actor_filename)
-            self.actor_target=keras.models.load_model(self.actor_target_filename)
-            self.critic=keras.models.load_model(self.critic_filename)
-            self.critic_target=keras.models.load_model(self.critic_target_filename)
-        else:
-            print("Creating models")
-            ## Create actor models
-            self.actor=self.createActorModel(actor['weights'])
-            self.actor_target=self.createActorModel(actor['weights'])
-            self.actor_target.set_weights(self.actor.get_weights())
-            ## Create critic models
-            self.critic=self.createCriticModel(critic['state input weights'], critic['action input weights'], critic['weights'])
-            self.critic_target=self.createCriticModel(critic['state input weights'], critic['action input weights'], critic['weights'])
-            self.critic_target.set_weights(self.critic.get_weights())
-            self.viewModels()
-            #self.critic_target=keras.models.clone_model(self.critic, self.critic.get_weights())
-        
+      ## Create/Load RL models
+        def instantiateModel(filename, weights, output):
+            if os.path.exists(filename):
+                return keras.models.load_model(filename)
+            return self.createModel(weights, output)
+
+        def instantiateTargetModel(filename, orig_model, weights, output):
+            if os.path.exists(filename):
+                return keras.models.load_model(filename)
+            target_model=self.createModel(weights, output)
+            target_model.set_weights(orig_model.get_weights())
+            return target_model
+
+        self.actor=instantiateModel(self.actor_filename, actor['weights'], actor['output'])
+        self.actor_target=instantiateTargetModel(self.actor_target_filename, self.actor, actor['weights'], actor['output'])
+        self.critic=instantiateModel(self.critic_filename, critic['weights'], critic['output'])
+        self.critic_target=instantiateTargetModel(self.critic_target_filename, self.critic, critic['weights'], critic['output'])
+        self.viewModels()
+
         ## Set up buffer
         # Number of "experiences" to store at max
         self.buffer_capacity=rl_setup['buffer capacity']
@@ -135,40 +135,41 @@ class DDPG:
 
 
 ##### Creating DNN models for DRL #####
-    def createActorModel(self, weights):
-        ## Create actor network
-        actor_layers=[layers.Input(shape=(self.state_size,))]
-        for layer in weights:
-            actor_layers.append(layers.Dense(layer, activation='relu')(actor_layers[-1]))
-        # Initialize weights between -3e-3 and 3-e3
+    def createModel(self, weights, output):
+        def layerBlock(block):
+            block_layers=[layers.Input(shape=(int(block['input size']),))]
+            for layer in block['weights']:
+                block_layers.append(layers.Dense(layer, activation='relu')(block_layers[-1]))
+            return block_layers
+        network_layers=[]
+        network_input_layers=[]
+     ## Check if more than one layer block
+        print(weights)
+        if len(weights)>1:
+            block_names=weights.keys()
+            for block_name in block_names:
+                if not block_name=='combined':
+                    network_layers.append(layerBlock(weights[block_name]))
+            network_input_layers=[layer[0] for layer in network_layers]
+            print(network_layers)
+            network_layers=[layers.Concatenate()([layer[-1] for layer in network_layers])]
+        else:
+            input_size=weights['combined']['input size']
+            network_layers=[layers.Input(shape=(input_size,))]
+        
+        for layer in weights['combined']['weights']:
+            network_layers.append(layers.Dense(layer, activation='relu')(network_layers[-1]))
+
+     ## Initialize weights between -3e-3 and 3-e3
+     ##  - original set up only applied to actor; okay for critic as well?
+     ##  - Shouldn't this be applied to all weights and not just last layer? Is this what is this doing?
         last_init=keras.initializers.RandomUniform(minval=-0.003, maxval=0.003)
-        outputs=layers.Dense(self.num_actions, activation='tanh', kernel_initializer=last_init)(actor_layers[-1])
-        actor_net=keras.Model(inputs=actor_layers[0], outputs=outputs)
-        return actor_net
-
-    def createCriticModel(self, state_weights, act_weights, weights):
-        ## Create critic model
-        ##  - Set up pre-layers for state input
-        critic_state_layers=[layers.Input(shape=(self.state_size,))]
-        for state_layer in state_weights:
-            critic_state_layers.append(layers.Dense(state_layer, activation='relu')(critic_state_layers[-1]))
-        
-        ##  - Set up pre-layers for action input
-        critic_act_layers=[layers.Input(shape=(self.num_actions,))]
-        for act_layer in state_weights:
-            critic_act_layers.append(layers.Dense(act_layer, activation='relu')(critic_act_layers[-1]))
-        
-        ##  - Set up for combined layers
-        state_act_out=layers.Concatenate()([critic_state_layers[-1], critic_act_layers[-1]])
-
-        critic_layers=[state_act_out]
-        for layer in weights:
-            critic_layers.append(layers.Dense(layer, activation='relu')(critic_layers[-1]))
-
-        critic=layers.Dense(1)(critic_layers[-1])
-        critic_net=keras.Model(inputs=[critic_state_layers[0], critic_act_layers[0]], outputs=critic)
-        return critic_net
-
+        network_inputs=network_input_layers if len(network_input_layers)>0 else network_layers[0]
+        output_layer_size=output['size']
+        activation_function=output['activation function'] if 'activation function' in output else None
+        network_outputs=layers.Dense(output_layer_size, activation=activation_function, kernel_initializer=last_init)(network_layers[-1])
+        model_net=keras.Model(inputs=network_inputs, outputs=network_outputs)
+        return model_net
 
 ##### Step in the world #####
     def step(self, _state):

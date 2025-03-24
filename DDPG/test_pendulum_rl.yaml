@@ -1,0 +1,48 @@
+model dir: models
+define: &state-size 3
+define: &action-size 1
+
+action size: *action-size
+state size: *state-size
+gamma: 0.99
+buffer capacity: 50000
+batch size: 128
+tau: 0.005
+buffer filename: pendulum_buffer.npz
+actor:
+  filename: pendulum_actor_network.keras
+  target filename: pendulum_actor_target_network.keras
+  learning rate: 0.001
+  clipnorm: 1.0
+  weights:
+    combined:
+      input size: *state-size
+      weights:
+        - 300
+        - 300
+  output:
+    activation function: tanh
+    size: *action-size
+critic:
+  filename: pendulum_critic_network.keras
+  target filename: pendulum_critic_target_network.keras
+  learning rate: 0.002
+  clipnorm: 1.0
+  weights:
+    state:
+      input size: *state-size
+      weights:
+        - 25
+        - 25
+    action:
+      input size: *action-size
+      weights:
+        - 25
+        - 25
+    combined:
+      input size: 4
+      weights:
+        - 25
+        - 25
+  output:
+    size: 1
