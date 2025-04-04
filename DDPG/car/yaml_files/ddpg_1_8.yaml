@@ -1,0 +1,33 @@
+action size: 2
+actor:
+  filename: actor_network_1_8.keras
+  learning rate: 0.001
+  target filename: actor_target_network.keras
+  target_filename: actor_target_network_1_8.keras
+  weights:
+  - 128
+  - 128
+  - 128
+  - 128
+batch size: 64
+buffer capacity: 100000
+buffer filename: buffer_1_8.npz
+critic:
+  action input weights:
+  - 16
+  - 32
+  filename: critic_network_1_8.keras
+  learning rate: 0.002
+  state input weights:
+  - 16
+  - 32
+  target filename: critic_target_network.keras
+  target_filename: critic_target_network_1_8.keras
+  weights:
+  - 64
+  - 64
+  - 64
+gamma: 0.99
+model dir: models
+state size: 32
+tau: 0.001

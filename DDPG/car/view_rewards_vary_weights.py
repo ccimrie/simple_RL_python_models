@@ -1,0 +1,39 @@
+import matplotlib.pyplot as plt
+import numpy as np
+import os
+
+def smooth_average_sma(data, window_size):
+    if len(data) < window_size:
+        return []  # Not enough data to form a full window
+    sma_values = []
+    for i in range(len(data) - window_size + 1):
+        window = data[i:i+window_size]
+        sma_values.append(sum(window) / window_size)
+    return sma_values
+
+reward_weights=np.array([[5, 3],
+                         [1, 5],
+                         [3, 6],
+                         [6, 6],
+                         [5, 2]]
+)
+
+colours=[[255/255.0,165/255.0,0],
+          [0,255/255.0,127/255.0],
+          [0, 191/255.0, 255/255.0],
+          [0, 0, 255/255.0],
+          [255/255.0, 20/255.0, 147/255.0]]
+
+c=0
+for reward_str in reward_weights:
+	reward_filename='rewards_'+str(reward_str[0])+'_'+str(reward_str[1])+'.txt'
+	if os.path.exists(reward_filename):
+		reward=np.loadtxt(reward_filename) 
+		#cost=np.loadtxt('costs.txt')
+		#plt.plot(reward, color=[0,0,0])
+		plt.plot(smooth_average_sma(reward, 10), color=colours[c])
+		c+=1
+#plt.plot(np.log(reward-reward.min()+0.001), color=[0,0,1])
+#plt.plot(np.log(cost-cost.min()+0.001), color=[0.5,0,0])
+#plt.plot(np.log((reward-cost-(reward-cost).min())+0.001), color=[0.7, 0, 0.2])
+plt.show()

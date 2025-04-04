@@ -1,0 +1,31 @@
+model dir: models
+state size: 32
+action size: 2
+gamma: 0.99
+buffer capacity: 100000
+batch size: 64
+tau: 0.001
+buffer filename: buffer.npz
+actor:
+  filename: actor_network.keras
+  target filename: actor_target_network.keras
+  learning rate: 0.001
+  weights:
+    - 128
+    - 128
+    - 128
+    - 128
+critic:
+  filename: critic_network.keras
+  target filename: critic_target_network.keras
+  learning rate: 0.002
+  state input weights:
+    - 16
+    - 32
+  action input weights:
+    - 16
+    - 32
+  weights:
+    - 64
+    - 64
+    - 64
