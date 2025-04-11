@@ -1,0 +1,49 @@
+action size: 2
+actor:
+  clipnorm: 1.0
+  filename: actor_network_3_9_3.keras
+  learning rate: 0.001
+  output:
+    activation function: tanh
+    size: 2
+  target filename: actor_target_network.keras
+  target_filename: actor_target_network_3_9_3.keras
+  weights:
+    combined:
+      input size: 48
+      weights:
+      - 300
+      - 300
+      - 300
+batch size: 128
+buffer capacity: 50000
+buffer filename: buffer_3_9_3.npz
+critic:
+  clipnorm: 1.0
+  filename: critic_network_3_9_3.keras
+  learning rate: 0.002
+  output:
+    size: 1
+  target filename: critic_target_network.keras
+  target_filename: critic_target_network_3_9_3.keras
+  weights:
+    action:
+      input size: 2
+      weights:
+      - 25
+      - 25
+    combined:
+      input size: 4
+      weights:
+      - 25
+      - 25
+    state:
+      input size: 48
+      weights:
+      - 25
+      - 25
+define: 2
+gamma: 0.99
+model dir: models
+state size: 48
+tau: 0.005

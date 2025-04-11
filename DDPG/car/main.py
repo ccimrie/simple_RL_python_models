@@ -1,12 +1,13 @@
 import safety_gymnasium
 from gymnasium.wrappers import TimeLimit
-from ddpg import DDPG
+from DDPG.ddpg import DDPG
 import numpy as np
 import matplotlib.pyplot as plt 
 import time
 import os
 import yaml
 from multiprocessing import Pool
+#import tensorflow as tf
 
 def trainAgent(yaml_file, reward_file, cost_file, r_ind, c1_ind, c2_ind, seed):
     env_id = 'SafetyCarGoal1-v0'
@@ -29,53 +30,65 @@ def trainAgent(yaml_file, reward_file, cost_file, r_ind, c1_ind, c2_ind, seed):
 
     state_start_ind=24
 
-    new_state=env.reset()
-    obs=new_state[0][state_start_ind:]
-    done=False
-    truncated=False
-    crashed=False
-    t=0
-    reward_max=0
-    costs_max=0
-    while not done and not truncated and not crashed:
-        cost_hazard=0
-        cost_vase=0
+    e=0
+    E=800
+    while e<E:
+        print(f"  - Episode {e}/{E}")
+        new_state=env.reset()
+        obs=new_state[0][state_start_ind:]
+        done=False
+        truncated=False
+        crashed=False
+        t=0
+        reward_max=0
+        costs_max=0
+        while not done and not truncated and not crashed:
+            cost_hazard=0
+            cost_vase=0
 
-        act=ddpg_controller.step(obs)
-        new_state=env.step(act)
-        obs_new=new_state[0][state_start_ind:]
-        reward=new_state[1]
-        cost=new_state[2]
-        done=new_state[3]
-        truncated=new_state[4]
+            act=ddpg_controller.step(obs)
+            new_state=env.step(act)
+            obs_new=new_state[0][state_start_ind:]
+            #print(obs_new)
+            reward=new_state[1]
+            cost=new_state[2]
+            done=new_state[3]
+            truncated=new_state[4]
 
-        ## Check if crashed into obstacle
-        if cost>100:
-            cost_vase=10
-            crashed=True
-            if cost-1000>0:
+            ## Check if crashed into obstacle
+            if cost>100:
+                cost_vase=10
+                crashed=True
+                if cost-1000>0:
+                    cost_hazard=0.1
+            elif cost>0:
                 cost_hazard=0.1
-        elif cost>0:
-            cost_hazard=0.1
 
-        reward_total=reward*reward_gain-cost_hazard*cost_hazard_gain-cost_vase*cost_vase_gain
-        ddpg_controller.recordStep(obs, act, reward_total, obs_new)
-        if tt%learn_step==0 and tt>start_learn:
+            reward_total=reward*reward_gain-cost_hazard*cost_hazard_gain-cost_vase*cost_vase_gain
+            ddpg_controller.recordStep(obs, act, reward_total, obs_new)
+            
             ddpg_controller.learn()
 
-        reward_max+=reward_total
-        costs_max+=cost
-        obs=obs_new
-        t+=1
-        tt+=1
+            reward_max+=reward_total
+            costs_max+=cost
+            obs=obs_new
+            t+=1
+            tt+=1
 
-        ddpg_controller.saveNets()
+            ddpg_controller.saveNets()
+        if os.path.exists(reward_filename):
+            permission='a'
+        else:
+            permission='w'
+        with open(reward_filename, permission) as f:
+            f.write(str(reward_max)+'\n')
+        e+=1
     return reward_max
 
 ### Make reward lists
 ## Get N pairs
-N=1
-reward_cost_array=np.random.randint(0,10,[N,3])
+N=5
+reward_cost_array=np.random.randint(1,10,[N,3])
 
 ### Make YAML files
 stream=open('template_ddpg.yaml', 'r')
@@ -102,6 +115,16 @@ for [r,c1,c2] in reward_cost_array:
     with open(yaml_filename,'w') as f:
         yaml.dump(model, f)
 
+
+'''
+for i in np.arange(len(setups)):
+        print(f"Agent {i}/{N}")
+        reward=trainAgent(setups[i][0], setups[i][1], setups[i][2], setups[i][3], setups[i][4], setups[i][5], setups[i][6])
+'''
+with Pool(5) as p:
+    rewards=p.starmap(trainAgent, setups)
+
+'''
 e=0
 E=800
 while e<E:
@@ -119,4 +142,19 @@ while e<E:
         temp_setup=list(setups[i])
         temp_setup[5]=np.random.randint(0,10e6)
         setups[i]=tuple(temp_setup)
+    print(f"Conducting episode {e}/{E}")
+    for i in np.arange(len(setups)):
+        print(f"  - Agent {i}/{N}")
+        reward=trainAgent(setups[i][0], setups[i][1], setups[i][2], setups[i][3], setups[i][4], setups[i][5], setups[i][6])
+        reward_filename=setups[i][1]
+        if os.path.exists(reward_filename):
+            permission='a'
+        else:
+            permission='w'
+        with open(setups[i][1], permission) as f:
+            f.write(str(reward[i])+'\n')    
+        temp_setup=list(setups[i])
+        temp_setup[5]=np.random.randint(0,10e6)
+        setups[i]=tuple(temp_setup)
     e+=1
+    '''
