@@ -1,5 +1,5 @@
 import safety_gymnasium
-from A2C import A2C
+from ddpg import DDPG
 import numpy as np
 import matplotlib.pyplot as plt 
 import time
@@ -8,37 +8,12 @@ from markov_model import MarkovModel
 
 import pickle
 
-def genTransitions(actor_model, critic_model, dict_filename):
+def genTransitions(yaml_file, dict_filename):
     env_id = 'SafetyCarGoal1-v0'
-
-#    render_choice=input('Render?')
-
-#    while not render_choice.isnumeric() or not (int(render_choice)==0 or int(render_choice)==1):
-#        render_choice=input('Render?')
-#        if not(render_choice.isnumeric()):
-#            print("Not an int")
-#        else:
-#            print(int(render_choice))
-#        if not(int(render_choice)==0) and not(int(render_choice)==1):
-#            print("Enter either 0 or 1")
-#    if int(render_choice):
-#        env=safety_gymnasium.make(env_id, render_mode='human')
-#    else:
-#        env=safety_gymnasium.make(env_id)#, render_mode='human')
-
-    env=safety_gymnasium.make(env_id)
+    env=safety_gymnasium.make(env_id, max_steps=250)
     env.task.mechanism_conf.continue_goal=False
     env.task.num_steps=1000
-
-    ##path=os.environ["MODEL_PATH"]
-    actor_filename=actor_model
-    critic_filename=critic_model
-#    start_ind=0
-#    if os.path.exists(path+actor_filename):
-#        start_ind=len(np.loadtxt('rewards.txt'))
-#        actor_filename='actor_model_latest.h5'
-#        critic_filename='critic_model_latest.h5'
-    a2c_controller=A2C(2,16*3, actor_weights=actor_filename, critic_weights=critic_filename) # One output which will then be discretised
+    ddpg_controller=DDPG(yaml_file)
 
     e=0
     E=2000
@@ -53,7 +28,7 @@ def genTransitions(actor_model, critic_model, dict_filename):
 
     while e<E:
         new_state=env.reset()
-        obs=new_state[0][-16*3:]
+        obs=new_state[0][24:]
         done=False
         truncated=False
         crashed=False
@@ -62,7 +37,7 @@ def genTransitions(actor_model, critic_model, dict_filename):
         costs_max=0
         print("Episode {0} of {1}".format(e, E))
 
-        markov_model.initialiseState(obs[15:].max())
+        markov_model.initialiseState(obs[24:].max())
 
         while not done and not truncated and not crashed:
             if (t+1)%200==0:
@@ -95,18 +70,10 @@ def genTransitions(actor_model, critic_model, dict_filename):
         pickle.dump(markov_model, f)
 
 
+yaml_files=os.listdir('yaml_files/')
 
-reward_weights=np.array([[5, 3],
-                         [1, 5],
-                         [3, 6],
-                         [6, 6],
-                         [5, 2]]
-)
-
-for reward in reward_weights:
-    actor_filename='actor_model_'+str(reward[0])+'_'+str(reward[1])+'_latest.h5'
-    critic_filename='critic_model_'+str(reward[0])+'_'+str(reward[1])+'_latest.h5'
-    print(actor_filename, critic_filename)
-    markov_model_filename='markov_models/mm_'+str(reward[0])+'_'+str(reward[1])+'.pickle'
-    genTransitions(actor_filename, critic_filename, markov_model_filename)
+for yaml_file in yaml_files:
+    gain=yaml_file[:-5].split('_')[1:]
+    markov_model_filename=f'markov_models/mm_{gain[0]}_{gain[1]}_{gain[2]}.pickle'
+    genTransitions(yaml_file, markov_model_filename)
 

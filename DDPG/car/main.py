@@ -9,7 +9,11 @@ import yaml
 from multiprocessing import Pool
 #import tensorflow as tf
 
-def trainAgent(yaml_file, reward_file, cost_file, r_ind, c1_ind, c2_ind, seed):
+def trainAgent(yaml_file, reward_filename, cost_file, r_ind, c1_ind, c2_ind, seed):
+
+    print("AGENT IS INITIALISED WITH FILES: ", yaml_file, reward_filename, cost_file, r_ind, c1_ind, c2_ind, seed)
+
+
     env_id = 'SafetyCarGoal1-v0'
     reward_gain=r_ind
     
@@ -19,6 +23,7 @@ def trainAgent(yaml_file, reward_file, cost_file, r_ind, c1_ind, c2_ind, seed):
     env=safety_gymnasium.make(env_id, max_episode_steps=500)
     env.task.mechanism_conf.continue_goal=False
     env.set_seed(seed)
+    print(f"AGENT IS USING FILE {yaml_file}")
     ddpg_controller=DDPG(yaml_file)
     start_ind=0
     reward_timecourse=[]
@@ -31,7 +36,12 @@ def trainAgent(yaml_file, reward_file, cost_file, r_ind, c1_ind, c2_ind, seed):
     state_start_ind=24
 
     e=0
-    E=800
+    E_max=250
+
+    print(f"AGENT IS USING REWARD FILE {reward_filename} FOR LOADING")
+    reward_temp=len(np.loadtxt(reward_filename)) if os.path.exists(reward_filename) else 0
+    E=E_max-reward_temp
+    
     while e<E:
         print(f"  - Episode {e}/{E}")
         new_state=env.reset()
@@ -76,19 +86,40 @@ def trainAgent(yaml_file, reward_file, cost_file, r_ind, c1_ind, c2_ind, seed):
             tt+=1
 
             ddpg_controller.saveNets()
+        
+        print(f"AGENT IS USING REWARD FILE {reward_filename} FOR CHECKING")
         if os.path.exists(reward_filename):
             permission='a'
         else:
             permission='w'
+        print(f"AGENT IS USING REWARD FILE {reward_filename} FOR WRITING")
         with open(reward_filename, permission) as f:
             f.write(str(reward_max)+'\n')
+            f.close()
         e+=1
     return reward_max
 
 ### Make reward lists
 ## Get N pairs
 N=5
-reward_cost_array=np.random.randint(1,10,[N,3])
+
+setup_filename='setup/setup.npz'
+
+
+## TODO improve so that it can select which are below max train episodes
+if os.path.exists(setup_filename):
+    reward_cost_array=np.load(setup_filename)['gains']
+    NN=len(reward_cost_array)
+    if NN<N:
+        new_vals=np.random.randint(1,10,[N-NN, 3])
+        reward_cost_array=np.vstack((reward_cost_array, new_vals))
+        np.savez('setup/setup', gains=reward_cost_array)
+    elif NN>N:
+        #ind=np.random.randint(0,N,N)
+        reward_cost_array=reward_cost_array[:N]
+else:
+    reward_cost_array=np.random.randint(1,10,[N,3])
+    np.savez('setup/setup', gains=reward_cost_array)
 
 ### Make YAML files
 stream=open('template_ddpg.yaml', 'r')
@@ -99,12 +130,12 @@ setups=[]
 for [r,c1,c2] in reward_cost_array:
     setup=[]
     yaml_filename='yaml_files/ddpg_{0}_{1}_{2}.yaml'.format(r,c1, c2)
-    reward_filename='rewards/{0}_{1}_{2}.txt'.format(r,c1, c2)
+    r_filename='rewards/{0}_{1}_{2}.txt'.format(r,c1, c2)
     cost_filename='costs/{0}_{1}_{2}.txt'.format(r,c1, c2)
     
     seed=np.random.randint(0,10e6)
 
-    setups.append((yaml_filename, reward_filename, cost_filename, r, c1, c2, seed))
+    setups.append((yaml_filename, r_filename, cost_filename, r, c1, c2, seed))
     
     model=rl_setup.copy()
     model['actor']['filename']='actor_network_{0}_{1}_{2}.keras'.format(r, c1, c2)
@@ -115,7 +146,7 @@ for [r,c1,c2] in reward_cost_array:
     with open(yaml_filename,'w') as f:
         yaml.dump(model, f)
 
-
+print(setups)
 '''
 for i in np.arange(len(setups)):
         print(f"Agent {i}/{N}")

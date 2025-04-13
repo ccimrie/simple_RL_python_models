@@ -240,16 +240,19 @@ class DDPG:
         # See Pseudo Code.
         with tf.GradientTape() as tape:
             target_actions=self.actor_target(next_state_batch, training=True)
-            done_batch*self.critic_target([next_state_batch, target_actions], training=True)
-            y=reward_batch+self.gamma*done_batch*self.critic_target([next_state_batch, target_actions], training=True)
-            critic_value=self.critic([state_batch, action_batch], training=True)
+            #done_batch*self.critic_target([next_state_batch, target_actions], training=True)
+            #y=reward_batch+self.gamma*done_batch*self.critic_target([next_state_batch, target_actions], training=True)
+            y=reward_batch+self.gamma*done_batch*self.critic_target([target_actions, next_state_batch], training=True)
+            #critic_value=self.critic([state_batch, action_batch], training=True)
+            critic_value=self.critic([action_batch, state_batch], training=True)
             critic_loss=keras.ops.mean(keras.ops.square(y-critic_value))
         critic_grad=tape.gradient(critic_loss, self.critic.trainable_variables)
         self.critic_optimizer.apply_gradients(zip(critic_grad, self.critic.trainable_variables))
 
         with tf.GradientTape() as tape:
             actions=self.actor(state_batch, training=True)
-            critic_value=self.critic([state_batch, actions], training=True)
+            #critic_value=self.critic([state_batch, actions], training=True)
+            critic_value=self.critic([actions, state_batch], training=True)
             # Used `-value` as we want to maximize the value given
             # by the critic for our actions
             actor_loss=-keras.ops.mean(critic_value)

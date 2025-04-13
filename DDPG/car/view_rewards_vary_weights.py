@@ -18,6 +18,9 @@ reward_weights=np.array([[5, 3],
                          [5, 2]]
 )
 
+
+reward_files=os.listdir('rewards/')
+
 colours=[[255/255.0,165/255.0,0],
           [0,255/255.0,127/255.0],
           [0, 191/255.0, 255/255.0],
@@ -25,14 +28,14 @@ colours=[[255/255.0,165/255.0,0],
           [255/255.0, 20/255.0, 147/255.0]]
 
 c=0
-for reward_str in reward_weights:
-	reward_filename='rewards_'+str(reward_str[0])+'_'+str(reward_str[1])+'.txt'
-	if os.path.exists(reward_filename):
-		reward=np.loadtxt(reward_filename) 
-		#cost=np.loadtxt('costs.txt')
-		#plt.plot(reward, color=[0,0,0])
-		plt.plot(smooth_average_sma(reward, 10), color=colours[c])
-		c+=1
+for file in reward_files:
+    reward=np.loadtxt('rewards/'+file)
+    gains=file[:-4].split('_')
+    label=f"({gains[0]}, {gains[1]}, {gains[2]})"
+    plt.plot(reward, c=colours[c], alpha=0.4)
+    plt.plot(smooth_average_sma(reward, 5), c=colours[c], label=label)
+    c+=1
+plt.legend()
 #plt.plot(np.log(reward-reward.min()+0.001), color=[0,0,1])
 #plt.plot(np.log(cost-cost.min()+0.001), color=[0.5,0,0])
 #plt.plot(np.log((reward-cost-(reward-cost).min())+0.001), color=[0.7, 0, 0.2])

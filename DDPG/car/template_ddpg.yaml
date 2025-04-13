@@ -18,9 +18,9 @@ actor:
     combined:
       input size: *state-size
       weights:
-        - 300
-        - 300
-        - 300
+        - 150
+        - 150
+        - 150
   output:
     activation function: tanh
     size: *action-size
@@ -43,7 +43,6 @@ critic:
     combined:
       input size: 4
       weights:
-        - 25
         - 25
   output:
     size: 1
