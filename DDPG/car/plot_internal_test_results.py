@@ -7,8 +7,8 @@ crashed=np.mean(results[:,2])
 danger_time=np.mean(results[:,3])
 
 
-completed_mission_str_out='  - Successeful mission:  {completed_mission}'
-energy_remaining_str_out='   - Average energy when successful:  {energy_remaining}'
-crashed_str_out='  - Average collision rate:  {crashed}'
-danger_time_str_out='  - Average time in unsafe zones:  {danger_time}'
+completed_mission_str_out=f'  - Successeful mission:  {completed_mission}'
+energy_remaining_str_out=f'   - Average energy when successful:  {energy_remaining}'
+crashed_str_out=f'  - Average collision rate:  {crashed}'
+danger_time_str_out=f'  - Average time in unsafe zones:  {danger_time}'
 print(f"Results are:\n{completed_mission_str_out}\n{energy_remaining_str_out}\n{crashed_str_out}\n{danger_time_str_out}")
