@@ -3,13 +3,10 @@ import numpy as np
 import distinctipy
 
 def smooth_average_sma(data, window_size):
-    if len(data) < window_size:
-        # return []  # Not enough data to form a full window
-        window_size=len(data)
-    sma_values = []
-    for i in range(len(data) - window_size + 1):
-        window = data[i:i+window_size]
-        sma_values.append(sum(window) / window_size)
+    sma_values=np.zeros(len(data))
+    for i in range(len(data)):
+    	start=max(0, i-window_size+1)
+    	sma_values[i]=np.mean(data[start:i+1])
     return sma_values
 
 # colours=distinctipy.get_colours(36)
