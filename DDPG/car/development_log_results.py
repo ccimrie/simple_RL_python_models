@@ -4,7 +4,8 @@ import distinctipy
 
 def smooth_average_sma(data, window_size):
     if len(data) < window_size:
-        return []  # Not enough data to form a full window
+        # return []  # Not enough data to form a full window
+        window_size=len(data)
     sma_values = []
     for i in range(len(data) - window_size + 1):
         window = data[i:i+window_size]
