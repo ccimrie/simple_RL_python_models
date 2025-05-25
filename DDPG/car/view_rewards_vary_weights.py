@@ -2,6 +2,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import os
 
+import distinctipy
+
 def smooth_average_sma(data, window_size):
     if len(data) < window_size:
         return []  # Not enough data to form a full window
@@ -21,11 +23,10 @@ reward_weights=np.array([[5, 3],
 
 reward_files=os.listdir('rewards/')
 
-colours=[[255/255.0,165/255.0,0],
-          [0,255/255.0,127/255.0],
-          [0, 191/255.0, 255/255.0],
-          [0, 0, 255/255.0],
-          [255/255.0, 20/255.0, 147/255.0]]
+
+N=50
+
+colours = distinctipy.get_colors(N)
 
 c=0
 for file in reward_files:

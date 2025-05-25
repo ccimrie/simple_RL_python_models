@@ -26,9 +26,10 @@ def genTransitions(yaml_file, dict_filename):
     else:
         markov_model=MarkovModel()
 
+    state_start_ind=24
     while e<E:
         new_state=env.reset()
-        obs=new_state[0][24:]
+        obs=new_state[0][state_start_ind:]
         done=False
         truncated=False
         crashed=False
@@ -40,13 +41,10 @@ def genTransitions(yaml_file, dict_filename):
         markov_model.initialiseState(obs[24:].max())
 
         while not done and not truncated and not crashed:
-            if (t+1)%200==0:
-                print('    - '+str(t+1))
-
-            act=a2c_controller.act(obs)
-            act=act.clip(-2,2)
+            act=ddpg_controller.act(obs)
             new_state=env.step(act)
-            obs=new_state[0][-16*3:]        
+            obs_new=new_state[0][state_start_ind:]
+
             reward=new_state[1]
             cost=new_state[2]
             done=new_state[3]

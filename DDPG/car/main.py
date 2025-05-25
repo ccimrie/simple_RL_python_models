@@ -36,7 +36,7 @@ def trainAgent(yaml_file, reward_filename, cost_file, r_ind, c1_ind, c2_ind, see
     state_start_ind=24
 
     e=0
-    E_max=250
+    E_max=800
 
     print(f"AGENT IS USING REWARD FILE {reward_filename} FOR LOADING")
     reward_temp=len(np.loadtxt(reward_filename)) if os.path.exists(reward_filename) else 0
@@ -101,7 +101,7 @@ def trainAgent(yaml_file, reward_filename, cost_file, r_ind, c1_ind, c2_ind, see
 
 ### Make reward lists
 ## Get N pairs
-N=5
+N=15
 
 setup_filename='setup/setup.npz'
 
@@ -111,8 +111,16 @@ if os.path.exists(setup_filename):
     reward_cost_array=np.load(setup_filename)['gains']
     NN=len(reward_cost_array)
     if NN<N:
-        new_vals=np.random.randint(1,10,[N-NN, 3])
-        reward_cost_array=np.vstack((reward_cost_array, new_vals))
+        # new_vals=np.random.randint(1,10,[N-NN, 3])
+        current_size=NN
+        while current_size<N:
+            new_val=np.random.randint(1,10,[1, 3])
+            while (new_val==reward_cost_array).all(1).any():
+                new_val=np.random.randint(1,10,[1, 3])
+                print(reward_cost_array)
+                print(new_val)
+            reward_cost_array=np.vstack((reward_cost_array, new_val))
+            current_size+=1
         np.savez('setup/setup', gains=reward_cost_array)
     elif NN>N:
         #ind=np.random.randint(0,N,N)
@@ -152,7 +160,7 @@ for i in np.arange(len(setups)):
         print(f"Agent {i}/{N}")
         reward=trainAgent(setups[i][0], setups[i][1], setups[i][2], setups[i][3], setups[i][4], setups[i][5], setups[i][6])
 '''
-with Pool(5) as p:
+with Pool(8) as p:
     rewards=p.starmap(trainAgent, setups)
 
 '''

@@ -21,7 +21,7 @@ def testAgent(yaml_file, test_results_file, seed):
     print(f"AGENT IS USING FILE {yaml_file}")
     ddpg_controller=DDPG(yaml_file)
 
-    TT=100
+    TT=energy
     if os.path.exists(test_results_file):
         test_results=np.load(test_results_file)['results']
         tt=len(test_results)
