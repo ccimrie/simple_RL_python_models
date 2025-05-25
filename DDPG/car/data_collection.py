@@ -1,5 +1,5 @@
 import safety_gymnasium
-from ddpg import DDPG
+from DDPG.ddpg import DDPG
 import numpy as np
 import matplotlib.pyplot as plt 
 import time
