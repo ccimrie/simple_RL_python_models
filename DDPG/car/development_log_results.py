@@ -14,7 +14,7 @@ reward_colour=(0.2,0.2,0.8)
 success_colour=(0.2,0.8,0.2)
 fail_colour=(0.8,0.2,0.2)
 
-plt.rcParams['font.size']=20
+plt.rcParams['font.size']=28
 
 reward=np.loadtxt("rewards/1_1_1.txt")
 e_outcome=np.loadtxt("tracked_training_values/e_outcome.txt")
@@ -44,5 +44,20 @@ ax_reward.legend(loc='lower right')
 ax_reward.set_xlabel("Episode")
 ax_reward.set_ylabel("Reward")
 ax_outcome.set_ylabel("Count", rotation=270, labelpad=20)
+
+fig_time, ax_time=plt.subplots()
+
+time_succeeded=np.where(e_outcome[:,0]==1)
+times=e_outcome[time_succeeded, 1][0]
+print(times)
+ax_time.scatter(time_succeeded, times, label="Time to reach goal", c=success_colour, s=100)
+print(smooth_average_sma(times, 3))
+ax_time.plot(time_succeeded[0], smooth_average_sma(times,3), c=success_colour, linewidth=lw, linestyle='--')
+
+
+ax_time.plot(ee_length, u_time, label="Time inside an unsafe zone", c=fail_colour, linewidth=lw)
+ax_time.legend(loc="upper right")
+ax_time.set_xlabel("Episode")
+ax_time.set_ylabel("Time")
 
 plt.show()

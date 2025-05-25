@@ -6,8 +6,6 @@ import matplotlib.pyplot as plt
 import time
 import os
 import yaml
-from multiprocessing import Pool
-#import tensorflow as tf
 
 def trainAgent(yaml_file, reward_filename, cost_file, r_ind, c1_ind, c2_ind, seed):
     env_id = 'SafetyCarGoal1-v0'
@@ -16,15 +14,19 @@ def trainAgent(yaml_file, reward_filename, cost_file, r_ind, c1_ind, c2_ind, see
     cost_hazard_gain=c1_ind
     cost_vase_gain=c2_ind
 
-    env=safety_gymnasium.make(env_id, max_episode_steps=500)
+    TT=500
+
+
+    #render_gym=True
+    env=safety_gymnasium.make(env_id, max_episode_steps=TT) 
+    #env=safety_gymnasium.make(env_id, render_mode='human', max_episode_steps=TT)
     env.task.mechanism_conf.continue_goal=False
-    env.set_seed(seed)
+    #env.set_seed(seed)
     print(f"AGENT IS USING FILE {yaml_file}")
     ddpg_controller=DDPG(yaml_file)
     start_ind=0
     reward_timecourse=[]
 
-    TT=1000
     tt=0
     learn_step=1
     start_learn=256
@@ -53,6 +55,8 @@ def trainAgent(yaml_file, reward_filename, cost_file, r_ind, c1_ind, c2_ind, see
         while not done and not truncated and not crashed:
             cost_hazard=0
             cost_vase=0
+            if t%50==0:
+                print(f"    - {t}/{TT}")
 
             act=ddpg_controller.step(obs)
             new_state=env.step(act)
@@ -60,18 +64,19 @@ def trainAgent(yaml_file, reward_filename, cost_file, r_ind, c1_ind, c2_ind, see
             #print(obs_new)
             reward=new_state[1]
             cost=new_state[2]
+
             done=new_state[3]
             truncated=new_state[4]
 
             ## Check if crashed into obstacle
-            if cost>100:
-                cost_vase=10
+            if cost>0.9:
+                cost_vase=1
                 crashed=True
-                if cost-100>0:
-                    cost_hazard=0.1
+                if cost-10>0:
+                    cost_hazard=0.2
                     u_t+=1
             elif cost>0:
-                cost_hazard=0.1
+                cost_hazard=0.2
                 u_t+=1
 
             reward_total=reward*reward_gain-cost_hazard*cost_hazard_gain-cost_vase*cost_vase_gain
@@ -107,7 +112,7 @@ def trainAgent(yaml_file, reward_filename, cost_file, r_ind, c1_ind, c2_ind, see
             permission='a'
         else:
             permission='w'
-        with open(tracked_vals_dir, permission) as f:
+        with open(episode_outcome_filename, permission) as f:
             out=0
             if done:
                 out=1
@@ -129,9 +134,9 @@ def trainAgent(yaml_file, reward_filename, cost_file, r_ind, c1_ind, c2_ind, see
 ### Make YAML file
 stream=open('template_ddpg.yaml', 'r')
 
-r=1.0
-c1=1.0
-c2=1.0
+r=1
+c1=1
+c2=1
 
 rl_setup=yaml.safe_load(stream)
 
