@@ -2,36 +2,41 @@ import numpy as np
 
 class MarkovModel():
 	## Assume 4 vehicle stages: driving, driving in danger zone, crashed, goal reached
-	## Assume 5 distances for danger zone
-	## Assyme 5 distances for obstacle
-	## 50 states total(?)
+	## Assume 3 distances for danger zone
+	## Assyme 3 distances for obstacle
+	## 3*3*4=36 states total
 
 	def __init__(self):
-		self.danger_distance_bins=5
-		self.danger_distance_metric={}
+		self.vehicle_stages=np.arange(4)
+		self.u_dist=np.arange(3)
+		self.o_dist=np.arange(3)
 
-		self.osbtacle_distance_bins=5
-		self.obstacle_distance_metric={}
+		self.combinations=np.array([[[[v, u, o] for v in self.vehicle_stage] for u in self.u_dist] for o in self.o_dist])
+		self.combinations=np.reshape(combinations,(36, 3))
 
 		self.transition_matrix_dict={}
-		for i in np.arange(2):
-			self.transition_matrix_dict[i]=np.zeros(self.danger_distance_bins+self.osbtacle_distance_bins+2)
-		self.current_state=0
+		self.initial_state={}
 
-	def initialiseState(self, dist, danger_zone=False):
-		self.danger_zone=danger_zone
-		self.current_state=self.getDistState(dist)
+	def initialiseState(self, dist_u, dist_o):
+		state_u=self.getDistState(dist_u, self.u_dist)
+		state_o=self.getDistState(dist_o, self.o_dist)
+		self.state=f'0{state_u}{state_o}'
+		if self.state not in self.transition_matrix_dict:
+			self.transition_matrix_dict[self.state]={}
+		self.initial_state[self.state]+=1
 		
-	def addStateTransition(self, dist):
-		next_state=self.getDistState(dist)
-		self.transition_matrix_dict[self.current_state][next_state]+=1
-		self.current_state=next_state
+	def addStateTransition(self, end, dist_u, dist_o):
+		state_v=end
+		state_u=self.getDistState(dist_u, self.u_dist)
+		state_o=self.getDistState(dist_o, self.o_dist)
+		next_state=f'{state_v}{state_u}{state_o}'
+		if next_state in self.transition_matrix_dict[self.state]:
+			self.transition_matrix_dict[self.state][next_state]+=1
+		else:
+			self.transition_matrix_dict[self.state][next_state]=1
+		if next_state not in self.transition_matrix_dict:
+			self.transition_matrix_dict[next_state]={}
+		self.state=next_state
 
-	def goalStateTransition(self):
-		self.transition_matrix_dict[self.current_state][self.distance_bins+2]+=1
-
-	def crashedStateTransition(self):
-		self.transition_matrix_dict[self.current_state][self.distance_bins+1]+=1
-
-	def getDistState(self, dist):
-		return int(dist*self.distance_bins)
+	def getDistState(self, dist, bins):
+		return int(dist*bins)
