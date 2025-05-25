@@ -10,7 +10,7 @@ import pickle
 
 def genTransitions(yaml_file, dict_filename):
     env_id = 'SafetyCarGoal1-v0'
-    env=safety_gymnasium.make(env_id, max_steps=250)
+    env=safety_gymnasium.make(env_id, max_episode_steps=250)
     env.task.mechanism_conf.continue_goal=False
     ddpg_controller=DDPG(yaml_file)
 
