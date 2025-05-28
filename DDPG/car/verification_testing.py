@@ -12,8 +12,8 @@ from multiprocessing import Pool
 def testAgent(yaml_file, test_results_file, seed):
     env_id = 'SafetyCarGoal1-v0'
     energy=250
-    # render_mode='human'
-    render_mode=''
+    render_mode='rgb'
+    #render_mode=''
     env=safety_gymnasium.make(env_id, max_episode_steps=energy, render_mode=render_mode)
     env.task.mechanism_conf.continue_goal=False
     env.set_seed(seed)
@@ -21,7 +21,7 @@ def testAgent(yaml_file, test_results_file, seed):
     print(f"AGENT IS USING FILE {yaml_file}")
     ddpg_controller=DDPG(yaml_file)
 
-    TT=1000
+    TT=500
     if os.path.exists(test_results_file):
         test_results=np.load(test_results_file)['results']
         tt=len(test_results)
@@ -36,6 +36,7 @@ def testAgent(yaml_file, test_results_file, seed):
     state_start_ind=24
     while tt<TT:
         print(f"  - Simulation {tt}/{TT}")
+        #env.task.world_info.layout['agent']=[0,0]
         new_state=env.reset()
         obs=new_state[0][state_start_ind:]
         done=False
@@ -73,7 +74,7 @@ c1=1
 c2=1
 
 yaml_filename='yaml_files/ddpg_{0}_{1}_{2}.yaml'.format(r,c1,c2)
-test_results_filename='test_results/results_{0}_{1}_{2}.npz'.format(r,c1,c2)
+verification_results_filename='verification_results/results_{0}_{1}_{2}.npz'.format(r,c1,c2)
 seed=np.random.randint(0,10e6)
 
-testAgent(yaml_filename,test_results_filename,seed)
+testAgent(yaml_filename,verification_results_filename,seed)

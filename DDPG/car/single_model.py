@@ -72,7 +72,7 @@ def trainAgent(yaml_file, reward_filename, cost_file, r_ind, c1_ind, c2_ind, see
             if cost>0.9:
                 cost_vase=1
                 crashed=True
-                if cost-10>0:
+                if cost-1.0>0:
                     cost_hazard=0.2
                     u_t+=1
             elif cost>0:

@@ -15,12 +15,13 @@ def genTransitions(yaml_file, dict_filename):
     ddpg_controller=DDPG(yaml_file)
 
     e=0
-    E=1000
+    E=5000
 
     if os.path.exists(dict_filename):
         print(dict_filename)
         with open(dict_filename, 'rb') as f:
             markov_model=pickle.load(f)
+        e=np.sum([markov_model.initial_state[state] for state in markov_model.initial_state])
     else:
         markov_model=MarkovModel()
 
@@ -34,9 +35,9 @@ def genTransitions(yaml_file, dict_filename):
         t=0
         print("Episode {0} of {1}".format(e, E))
 
-        dist_u=obs_new[16:32].max()
-        dist_v=obs_new[32:].max()
-        markov_model.initialiseState(dist_u, dist_v)
+        dist_u=obs[16:32].max()
+        dist_o=obs[32:48].max()
+        markov_model.initialiseState(dist_u, dist_o)
 
         while not done and not truncated and not crashed:
             act=ddpg_controller.act(obs)
@@ -49,16 +50,17 @@ def genTransitions(yaml_file, dict_filename):
             truncated=new_state[4]
 
             v_state=0
-            dist_u=obs_new[16:32].max()
-            dist_v=obs_new[32:].max()
+            dist_u=obs[16:32].max()
+            dist_o=obs[32:48].max()
 
             if cost>0.9:
+                crashed=True
                 v_state=2
             elif done:
                 v_state=3
             elif cost>0:
                 v_state=1
-            markov_model.addStateTransition(v_state, dist_u, dist_v)
+            markov_model.addStateTransition(v_state, dist_u, dist_o)
             
             obs=obs_new
             t+=1
