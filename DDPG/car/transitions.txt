@@ -1,0 +1,936 @@
+[] t<TT & vehicle_stage=0 & u_dist=0 & o_dist=0 -> p_000_000: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_000_001: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_000_010: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_000_011: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_000_020: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_000_021: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_000_100: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_000_101: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_000_110: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_000_111: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_000_120: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_000_121: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_000_200: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_000_201: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_000_210: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_000_211: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_000_220: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_000_221: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_000_300: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_000_301: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_000_310: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_000_311: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_000_320: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_000_321: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_000_322: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=2)&(t'=t+1);
+
+[] t<TT & vehicle_stage=0 & u_dist=0 & o_dist=1 -> p_001_000: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_001_001: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_001_010: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_001_011: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_001_020: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_001_021: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_001_100: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_001_101: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_001_110: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_001_111: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_001_120: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_001_121: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_001_200: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_001_201: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_001_210: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_001_211: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_001_220: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_001_221: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_001_300: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_001_301: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_001_310: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_001_311: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_001_320: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_001_321: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_001_322: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=2)&(t'=t+1);
+
+[] t<TT & vehicle_stage=0 & u_dist=0 & o_dist=2 -> p_002_000: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_002_001: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_002_010: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_002_011: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_002_020: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_002_021: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_002_100: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_002_101: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_002_110: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_002_111: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_002_120: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_002_121: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_002_200: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_002_201: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_002_210: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_002_211: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_002_220: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_002_221: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_002_300: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_002_301: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_002_310: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_002_311: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_002_320: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_002_321: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_002_322: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=2)&(t'=t+1);
+
+[] t<TT & vehicle_stage=0 & u_dist=1 & o_dist=0 -> p_010_000: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_010_001: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_010_010: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_010_011: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_010_020: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_010_021: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_010_100: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_010_101: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_010_110: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_010_111: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_010_120: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_010_121: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_010_200: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_010_201: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_010_210: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_010_211: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_010_220: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_010_221: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_010_300: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_010_301: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_010_310: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_010_311: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_010_320: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_010_321: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_010_322: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=2)&(t'=t+1);
+
+[] t<TT & vehicle_stage=0 & u_dist=1 & o_dist=1 -> p_011_000: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_011_001: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_011_010: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_011_011: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_011_020: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_011_021: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_011_100: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_011_101: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_011_110: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_011_111: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_011_120: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_011_121: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_011_200: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_011_201: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_011_210: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_011_211: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_011_220: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_011_221: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_011_300: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_011_301: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_011_310: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_011_311: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_011_320: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_011_321: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_011_322: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=2)&(t'=t+1);
+
+[] t<TT & vehicle_stage=0 & u_dist=1 & o_dist=2 -> p_012_000: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_012_001: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_012_010: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_012_011: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_012_020: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_012_021: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_012_100: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_012_101: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_012_110: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_012_111: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_012_120: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_012_121: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_012_200: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_012_201: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_012_210: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_012_211: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_012_220: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_012_221: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_012_300: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_012_301: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_012_310: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_012_311: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_012_320: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_012_321: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_012_322: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=2)&(t'=t+1);
+
+[] t<TT & vehicle_stage=0 & u_dist=2 & o_dist=0 -> p_020_000: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_020_001: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_020_010: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_020_011: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_020_020: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_020_021: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_020_100: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_020_101: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_020_110: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_020_111: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_020_120: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_020_121: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_020_200: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_020_201: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_020_210: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_020_211: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_020_220: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_020_221: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_020_300: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_020_301: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_020_310: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_020_311: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_020_320: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_020_321: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_020_322: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=2)&(t'=t+1);
+
+[] t<TT & vehicle_stage=0 & u_dist=2 & o_dist=1 -> p_021_000: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_021_001: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_021_010: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_021_011: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_021_020: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_021_021: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_021_100: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_021_101: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_021_110: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_021_111: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_021_120: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_021_121: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_021_200: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_021_201: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_021_210: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_021_211: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_021_220: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_021_221: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_021_300: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_021_301: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_021_310: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_021_311: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_021_320: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_021_321: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_021_322: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=2)&(t'=t+1);
+
+[] t<TT & vehicle_stage=0 & u_dist=2 & o_dist=2 -> p_022_000: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_022_001: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_022_010: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_022_011: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_022_020: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_022_021: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_022_100: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_022_101: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_022_110: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_022_111: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_022_120: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_022_121: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_022_200: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_022_201: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_022_210: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_022_211: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_022_220: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_022_221: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_022_300: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_022_301: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_022_310: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_022_311: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_022_320: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_022_321: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_022_322: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=2)&(t'=t+1);
+
+[] t<TT & vehicle_stage=1 & u_dist=0 & o_dist=0 -> p_100_000: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_100_001: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_100_010: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_100_011: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_100_020: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_100_021: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_100_100: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_100_101: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_100_110: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_100_111: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_100_120: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_100_121: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_100_200: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_100_201: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_100_210: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_100_211: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_100_220: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_100_221: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_100_300: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_100_301: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_100_310: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_100_311: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_100_320: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_100_321: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_100_322: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=2)&(t'=t+1);
+
+[] t<TT & vehicle_stage=1 & u_dist=0 & o_dist=1 -> p_101_000: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_101_001: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_101_010: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_101_011: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_101_020: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_101_021: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_101_100: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_101_101: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_101_110: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_101_111: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_101_120: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_101_121: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_101_200: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_101_201: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_101_210: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_101_211: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_101_220: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_101_221: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_101_300: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_101_301: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_101_310: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_101_311: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_101_320: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_101_321: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_101_322: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=2)&(t'=t+1);
+
+[] t<TT & vehicle_stage=1 & u_dist=0 & o_dist=2 -> p_102_000: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_102_001: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_102_010: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_102_011: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_102_020: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_102_021: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_102_100: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_102_101: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_102_110: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_102_111: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_102_120: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_102_121: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_102_200: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_102_201: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_102_210: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_102_211: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_102_220: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_102_221: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_102_300: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_102_301: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_102_310: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_102_311: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_102_320: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_102_321: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_102_322: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=2)&(t'=t+1);
+
+[] t<TT & vehicle_stage=1 & u_dist=1 & o_dist=0 -> p_110_000: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_110_001: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_110_010: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_110_011: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_110_020: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_110_021: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_110_100: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_110_101: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_110_110: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_110_111: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_110_120: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_110_121: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_110_200: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_110_201: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_110_210: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_110_211: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_110_220: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_110_221: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_110_300: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_110_301: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_110_310: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_110_311: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_110_320: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_110_321: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_110_322: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=2)&(t'=t+1);
+
+[] t<TT & vehicle_stage=1 & u_dist=1 & o_dist=1 -> p_111_000: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_111_001: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_111_010: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_111_011: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_111_020: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_111_021: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_111_100: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_111_101: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_111_110: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_111_111: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_111_120: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_111_121: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_111_200: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_111_201: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_111_210: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_111_211: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_111_220: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_111_221: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_111_300: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_111_301: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_111_310: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_111_311: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_111_320: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_111_321: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_111_322: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=2)&(t'=t+1);
+
+[] t<TT & vehicle_stage=1 & u_dist=1 & o_dist=2 -> p_112_000: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_112_001: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_112_010: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_112_011: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_112_020: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_112_021: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_112_100: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_112_101: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_112_110: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_112_111: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_112_120: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_112_121: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_112_200: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_112_201: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_112_210: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_112_211: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_112_220: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_112_221: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_112_300: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_112_301: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_112_310: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_112_311: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_112_320: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_112_321: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_112_322: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=2)&(t'=t+1);
+
+[] t<TT & vehicle_stage=1 & u_dist=2 & o_dist=0 -> p_120_000: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_120_001: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_120_010: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_120_011: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_120_020: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_120_021: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_120_100: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_120_101: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_120_110: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_120_111: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_120_120: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_120_121: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_120_200: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_120_201: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_120_210: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_120_211: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_120_220: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_120_221: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_120_300: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_120_301: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_120_310: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_120_311: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_120_320: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_120_321: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_120_322: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=2)&(t'=t+1);
+
+[] t<TT & vehicle_stage=1 & u_dist=2 & o_dist=1 -> p_121_000: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_121_001: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_121_010: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_121_011: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_121_020: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_121_021: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_121_100: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_121_101: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_121_110: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_121_111: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_121_120: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_121_121: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_121_200: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_121_201: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_121_210: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_121_211: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_121_220: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_121_221: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_121_300: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_121_301: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_121_310: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_121_311: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_121_320: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_121_321: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_121_322: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=2)&(t'=t+1);
+
+[] t<TT & vehicle_stage=1 & u_dist=2 & o_dist=2 -> p_122_000: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_122_001: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_122_010: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_122_011: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_122_020: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_122_021: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_122_100: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_122_101: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_122_110: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_122_111: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_122_120: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_122_121: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_122_200: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_122_201: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_122_210: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_122_211: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_122_220: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_122_221: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_122_300: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_122_301: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_122_310: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_122_311: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_122_320: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_122_321: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_122_322: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=2)&(t'=t+1);
+
+[] t<TT & vehicle_stage=2 & u_dist=0 & o_dist=0 -> p_200_000: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_200_001: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_200_010: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_200_011: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_200_020: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_200_021: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_200_100: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_200_101: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_200_110: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_200_111: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_200_120: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_200_121: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_200_200: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_200_201: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_200_210: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_200_211: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_200_220: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_200_221: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_200_300: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_200_301: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_200_310: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_200_311: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_200_320: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_200_321: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_200_322: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=2)&(t'=t+1);
+
+[] t<TT & vehicle_stage=2 & u_dist=0 & o_dist=1 -> p_201_000: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_201_001: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_201_010: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_201_011: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_201_020: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_201_021: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_201_100: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_201_101: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_201_110: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_201_111: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_201_120: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_201_121: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_201_200: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_201_201: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_201_210: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_201_211: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_201_220: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_201_221: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_201_300: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_201_301: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_201_310: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_201_311: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_201_320: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_201_321: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_201_322: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=2)&(t'=t+1);
+
+[] t<TT & vehicle_stage=2 & u_dist=0 & o_dist=2 -> p_202_000: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_202_001: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_202_010: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_202_011: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_202_020: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_202_021: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_202_100: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_202_101: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_202_110: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_202_111: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_202_120: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_202_121: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_202_200: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_202_201: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_202_210: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_202_211: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_202_220: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_202_221: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_202_300: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_202_301: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_202_310: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_202_311: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_202_320: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_202_321: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_202_322: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=2)&(t'=t+1);
+
+[] t<TT & vehicle_stage=2 & u_dist=1 & o_dist=0 -> p_210_000: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_210_001: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_210_010: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_210_011: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_210_020: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_210_021: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_210_100: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_210_101: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_210_110: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_210_111: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_210_120: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_210_121: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_210_200: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_210_201: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_210_210: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_210_211: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_210_220: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_210_221: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_210_300: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_210_301: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_210_310: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_210_311: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_210_320: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_210_321: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_210_322: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=2)&(t'=t+1);
+
+[] t<TT & vehicle_stage=2 & u_dist=1 & o_dist=1 -> p_211_000: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_211_001: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_211_010: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_211_011: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_211_020: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_211_021: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_211_100: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_211_101: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_211_110: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_211_111: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_211_120: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_211_121: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_211_200: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_211_201: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_211_210: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_211_211: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_211_220: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_211_221: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_211_300: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_211_301: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_211_310: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_211_311: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_211_320: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_211_321: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_211_322: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=2)&(t'=t+1);
+
+[] t<TT & vehicle_stage=2 & u_dist=1 & o_dist=2 -> p_212_000: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_212_001: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_212_010: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_212_011: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_212_020: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_212_021: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_212_100: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_212_101: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_212_110: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_212_111: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_212_120: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_212_121: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_212_200: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_212_201: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_212_210: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_212_211: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_212_220: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_212_221: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_212_300: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_212_301: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_212_310: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_212_311: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_212_320: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_212_321: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_212_322: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=2)&(t'=t+1);
+
+[] t<TT & vehicle_stage=2 & u_dist=2 & o_dist=0 -> p_220_000: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_220_001: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_220_010: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_220_011: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_220_020: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_220_021: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_220_100: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_220_101: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_220_110: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_220_111: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_220_120: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_220_121: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_220_200: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_220_201: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_220_210: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_220_211: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_220_220: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_220_221: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_220_300: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_220_301: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_220_310: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_220_311: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_220_320: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_220_321: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_220_322: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=2)&(t'=t+1);
+
+[] t<TT & vehicle_stage=2 & u_dist=2 & o_dist=1 -> p_221_000: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_221_001: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_221_010: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_221_011: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_221_020: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_221_021: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_221_100: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_221_101: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_221_110: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_221_111: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_221_120: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_221_121: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_221_200: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_221_201: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_221_210: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_221_211: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_221_220: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_221_221: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_221_300: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_221_301: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_221_310: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_221_311: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_221_320: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_221_321: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_221_322: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=2)&(t'=t+1);
+
+[] t<TT & vehicle_stage=2 & u_dist=2 & o_dist=2 -> p_222_000: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_222_001: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_222_010: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_222_011: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_222_020: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_222_021: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_222_100: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_222_101: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_222_110: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_222_111: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_222_120: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_222_121: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_222_200: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_222_201: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_222_210: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_222_211: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_222_220: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_222_221: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_222_300: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_222_301: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_222_310: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_222_311: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_222_320: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_222_321: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_222_322: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=2)&(t'=t+1);
+
+[] t<TT & vehicle_stage=3 & u_dist=0 & o_dist=0 -> p_300_000: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_300_001: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_300_010: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_300_011: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_300_020: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_300_021: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_300_100: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_300_101: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_300_110: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_300_111: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_300_120: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_300_121: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_300_200: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_300_201: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_300_210: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_300_211: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_300_220: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_300_221: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_300_300: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_300_301: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_300_310: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_300_311: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_300_320: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_300_321: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_300_322: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=2)&(t'=t+1);
+
+[] t<TT & vehicle_stage=3 & u_dist=0 & o_dist=1 -> p_301_000: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_301_001: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_301_010: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_301_011: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_301_020: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_301_021: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_301_100: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_301_101: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_301_110: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_301_111: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_301_120: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_301_121: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_301_200: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_301_201: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_301_210: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_301_211: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_301_220: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_301_221: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_301_300: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_301_301: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_301_310: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_301_311: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_301_320: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_301_321: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_301_322: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=2)&(t'=t+1);
+
+[] t<TT & vehicle_stage=3 & u_dist=0 & o_dist=2 -> p_302_000: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_302_001: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_302_010: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_302_011: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_302_020: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_302_021: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_302_100: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_302_101: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_302_110: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_302_111: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_302_120: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_302_121: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_302_200: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_302_201: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_302_210: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_302_211: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_302_220: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_302_221: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_302_300: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_302_301: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_302_310: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_302_311: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_302_320: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_302_321: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_302_322: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=2)&(t'=t+1);
+
+[] t<TT & vehicle_stage=3 & u_dist=1 & o_dist=0 -> p_310_000: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_310_001: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_310_010: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_310_011: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_310_020: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_310_021: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_310_100: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_310_101: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_310_110: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_310_111: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_310_120: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_310_121: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_310_200: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_310_201: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_310_210: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_310_211: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_310_220: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_310_221: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_310_300: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_310_301: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_310_310: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_310_311: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_310_320: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_310_321: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_310_322: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=2)&(t'=t+1);
+
+[] t<TT & vehicle_stage=3 & u_dist=1 & o_dist=1 -> p_311_000: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_311_001: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_311_010: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_311_011: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_311_020: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_311_021: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_311_100: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_311_101: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_311_110: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_311_111: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_311_120: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_311_121: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_311_200: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_311_201: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_311_210: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_311_211: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_311_220: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_311_221: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_311_300: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_311_301: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_311_310: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_311_311: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_311_320: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_311_321: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_311_322: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=2)&(t'=t+1);
+
+[] t<TT & vehicle_stage=3 & u_dist=1 & o_dist=2 -> p_312_000: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_312_001: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_312_010: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_312_011: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_312_020: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_312_021: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_312_100: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_312_101: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_312_110: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_312_111: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_312_120: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_312_121: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_312_200: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_312_201: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_312_210: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_312_211: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_312_220: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_312_221: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_312_300: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_312_301: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_312_310: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_312_311: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_312_320: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_312_321: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_312_322: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=2)&(t'=t+1);
+
+[] t<TT & vehicle_stage=3 & u_dist=2 & o_dist=0 -> p_320_000: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_320_001: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_320_010: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_320_011: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_320_020: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_320_021: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_320_100: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_320_101: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_320_110: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_320_111: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_320_120: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_320_121: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_320_200: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_320_201: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_320_210: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_320_211: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_320_220: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_320_221: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_320_300: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_320_301: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_320_310: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_320_311: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_320_320: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_320_321: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_320_322: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=2)&(t'=t+1);
+
+[] t<TT & vehicle_stage=3 & u_dist=2 & o_dist=1 -> p_321_000: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_321_001: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_321_010: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_321_011: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_321_020: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_321_021: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_321_100: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_321_101: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_321_110: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_321_111: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_321_120: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_321_121: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_321_200: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_321_201: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_321_210: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_321_211: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_321_220: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_321_221: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_321_300: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_321_301: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_321_310: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_321_311: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_321_320: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_321_321: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_321_322: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=2)&(t'=t+1);
+
+[] t<TT & vehicle_stage=3 & u_dist=2 & o_dist=2 -> p_322_000: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_322_001: (vehicle_stage'=0)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_322_010: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_322_011: (vehicle_stage'=0)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_322_020: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_322_021: (vehicle_stage'=0)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_322_100: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_322_101: (vehicle_stage'=1)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_322_110: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_322_111: (vehicle_stage'=1)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_322_120: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_322_121: (vehicle_stage'=1)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_322_200: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_322_201: (vehicle_stage'=2)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_322_210: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_322_211: (vehicle_stage'=2)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_322_220: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_322_221: (vehicle_stage'=2)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_322_300: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=0)&(t'=t+1) +
+p_322_301: (vehicle_stage'=3)&(u_dist'=0)&(o_dist'=1)&(t'=t+1) +
+p_322_310: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=0)&(t'=t+1) +
+p_322_311: (vehicle_stage'=3)&(u_dist'=1)&(o_dist'=1)&(t'=t+1) +
+p_322_320: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=0)&(t'=t+1) +
+p_322_321: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=1)&(t'=t+1) +
+p_322_322: (vehicle_stage'=3)&(u_dist'=2)&(o_dist'=2)&(t'=t+1);
+

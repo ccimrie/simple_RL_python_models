@@ -1,0 +1,47 @@
+dtmc
+
+// Starting energy -> maximum time for mission
+const int e_lim=250;
+
+module rlVehicle
+	vehicle_stage: [0..3] init 0;
+	// 0-driving, 1-driving in unsafe zone, 2-crashed, 3-goal reached
+
+	u_dist:[0..2] init 0;
+	// 0-close (<1/3), 1-medium (<2/3), 2-far (>2/3)
+
+	o_dist:[0..2] init 0;
+	// 0-close (<1/3), 1-medium (<2/3), 2-far (>2/3)
+
+	t:[-1..e_lim] init -1;
+	// Current time; initialised at -1 so we can probalisitically assign initial state (i.e. at initialisation, what u_dist/o_dist is most likely)
+
+endmodule
+
+rewards "unsafe"
+	vehicle_stage=1: 1;
+endrewards
+
+rewards "close_u"
+	u_dist=0: 1;
+endrewards
+
+rewards "medium_u"
+	u_dist=1: 1;
+endrewards
+
+rewards "far_u"
+	u_dist=2: 1;
+endrewards
+
+rewards "close_o"
+	o_dist=0: 1;
+endrewards
+
+rewards "medium_o"
+	o_dist=1: 1;
+endrewards
+
+rewards "far_o"
+	o_dist=2: 1;
+endrewards
