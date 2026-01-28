@@ -102,7 +102,7 @@ class A2C:
     def step(self, _state):
         ##self.memory=_state
         self.state_history.append(_state)
-        state = tf.convert_to_tensor(_state)
+        state=tf.convert_to_tensor(_state)
         state=tf.expand_dims(state,0)
         
         ## Get Gaussian parameters from actor network
